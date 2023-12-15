@@ -1,0 +1,9 @@
+@use 'global';
+@import 'variables';
+@import 'mixins';
+@import './components/header';
+@import './components/main';
+@import './components/search';
+@import './components/details';
+@import './components/boost';
+@import './components/footer';

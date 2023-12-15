@@ -1,0 +1,189 @@
+@import '../global' silent;
+@import '../mixins' silent;
+@import '../variables' silent;
+
+.details {
+    background-color: hsl(0, 1%, 90%);
+    max-width: 100%;
+    height: max-content;
+    padding: 3.125rem 5rem;
+    padding-bottom: 13.75rem;
+    overflow-x: hidden;
+
+    p {
+        color: $gray;
+        font-weight: 600;
+    }
+
+    .text {
+        text-align: center;
+        margin-top: 7.5rem;
+        margin-bottom: 2.5rem;
+
+        h2 {
+            font-weight: 800;
+            font-size: 2.1rem;
+            margin-bottom: 0.9375rem;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 1.875rem;
+            margin: 0 auto;
+            // color: 
+            width: 50%;
+        }
+    }
+
+    .line {
+        width: 100%;
+        position: absolute;
+        top: 10.625rem;
+        padding: 0.25rem;
+        background: $primary;
+        z-index: 0;
+        border: none;
+    }
+
+    .details-container {
+        position: relative;
+        display: grid;
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(15.625rem, 1fr));
+        grid-gap: 1.5625rem;
+        max-width: 100%;
+        margin-top: 5rem;
+
+        div {
+            background: #fff;
+            border-radius: 0.3125rem;
+            padding: 3.125rem 1.875rem;
+            line-height: 1.5;
+            position: relative;
+
+            h3 {
+                line-height: 3;
+            }
+
+            &:nth-child(3) {
+                top: 3.125rem;
+            }
+
+            &:nth-child(4) {
+                top: 6.25rem;
+            }
+        }
+
+        .img-container {
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.25rem;
+            background: $secondary;
+            position: absolute;
+            top: -3.125rem;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
+        }
+    }
+
+    .links {
+        margin-top: 3.125rem;
+    }
+
+    .links li {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #fff;
+        margin-top: 1.25rem;
+        padding: 1.25rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+
+        #short-url {
+            color: $primary;
+        }
+
+        #not-copied {
+            background: $primary;
+
+            &:hover {
+                transition: all 300ms ease-in-out;
+                cursor: pointer;
+                background: hsl(180, 66%, 79%);
+            }
+        }
+
+        #copied {
+            background: $secondary;
+
+            &:hover {
+                transition: all 300ms ease-in-out;
+                cursor: pointer;
+                background: hsl(257, 27%, 60%);
+            }
+        }
+    }
+
+    button {
+        @include btn;
+        width: 4.375rem;
+        margin-left: 1.25rem;
+        border-radius: 0.25rem;
+
+    }
+}
+
+@media screen and (width <=1024px) {
+    .details {
+        .details-container {
+            grid-template-columns: unset;
+            grid-template-rows: repeat(3, minmax(15.625rem, 1fr));
+        }
+
+        .line {
+            width: 0;
+            height: 80%;
+            top: 10.625rem;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .text {
+            p {
+                width: 60%;
+            }
+        }
+
+        .img-container {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .links li {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-evenly;
+
+            span {
+                margin-top: 0.3125rem;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            button {
+                display: block;
+                margin-left: 0;
+                margin-top: 0.3125rem;
+                width: 100%;
+                padding: 0.9375rem 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,65 @@
+@import '../global' silent;
+@import '../mixins' silent;
+@import '../variables' silent;
+
+.search {
+    @include flex-center;
+    max-width: 100%;
+    border-radius: 0.625rem;
+    padding: 2.5rem;
+    background: $secondary;
+    background-size: cover;
+    background-position: top left;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    margin: 0 5rem;
+    z-index: 2;
+    position: relative;
+    bottom: -4.375rem;
+    overflow-x: hidden;
+
+    input {
+        width: 80%;
+        background: #fff;
+        padding: 1.25rem;
+        border-radius: 0.625rem;
+        margin-right: 1.25rem;
+        font: inherit;
+        font-weight: 600;
+        border: 0.125rem solid transparent;
+        position: relative;
+
+        &:focus {
+            border: 0.125rem solid $active;
+            outline: none;
+
+            &::placeholder {
+                color: $active;
+            }
+        }
+    }
+
+    button {
+        @include btn;
+        border-radius: 0.625rem;
+        padding: 1.125rem 0;
+        width: 15%;
+    }
+}
+
+@media screen and (width <=768px) {
+    .search {
+        display: flex;
+        flex-direction: column;
+
+        input {
+            margin-right: 0;
+            margin-bottom: 1.25rem;
+            width: 100%;
+        }
+
+        button {
+            width: 100%;
+        }
+    }
+}

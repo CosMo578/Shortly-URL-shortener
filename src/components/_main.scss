@@ -1,0 +1,75 @@
+@import '../global' silent;
+@import '../mixins' silent;
+@import '../variables' silent;
+
+main {
+    // @include flex-start;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100vw;
+    max-width: 100vw;
+    height: fit-content;
+    padding: 3.125rem 5rem;
+    overflow-x: hidden;
+    padding-right: 0;
+    justify-content: flex-start;
+
+    article {
+        width: 100%;
+        h1 {
+            margin-top: 3.75rem;
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: -0.3125rem;
+            // word-spacing: -5px;
+            line-height: 1.2;
+        }
+
+        p {
+            width: 100%;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+            color: $gray;
+            letter-spacing: 0.5;
+            word-spacing: 0.2;
+            line-height: 1.2;
+        }
+
+        button {
+            @include btn;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+        }
+    }
+
+    img {
+        position: relative;
+        left: 8.75rem;
+        height: 100%;
+        width: auto;
+        // margin-left: auto;
+    }
+}
+
+@media screen and (width <=1024px) {
+    main {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding: 0.625rem 1.25rem;
+
+        article {
+            width: 100%;
+
+            h1 {
+                font-size: 3rem;
+            }
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+    }
+}
