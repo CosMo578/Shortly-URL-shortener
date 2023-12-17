@@ -54,7 +54,7 @@
         max-width: 100%;
         margin-top: 5rem;
 
-        div {
+        .details-child {
             background: #fff;
             border-radius: 0.3125rem;
             padding: 3.125rem 1.875rem;
@@ -142,7 +142,11 @@
 
 @media screen and (width <=1024px) {
     .details {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+
         .details-container {
+            text-align: center;
             grid-template-columns: unset;
             grid-template-rows: repeat(3, minmax(15.625rem, 1fr));
         }
@@ -161,6 +165,12 @@
             }
         }
 
+        .details-child {
+            h3 {
+                text-align: center;
+            }
+        }
+
         .img-container {
             left: 50%;
             transform: translateX(-50%);
@@ -170,6 +180,7 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: space-evenly;
+            width: 100%;
 
             span {
                 margin-top: 0.3125rem;

@@ -85,7 +85,7 @@ header nav ul li {
   margin-right: 1.25rem;
 }
 header nav ul li:first-child {
-  margin-left: 1.25rem;
+  margin-left: 1.5625rem;
 }
 header nav ul li:hover {
   transition: all 300ms ease-in-out;
@@ -105,7 +105,7 @@ header nav .buttons button:first-child:hover {
 header nav .buttons button:nth-child(2) {
   font-weight: 700;
   color: #fff;
-  padding: 0.9375rem 1.5625rem;
+  padding: 12px 30px;
   background: hsl(180, 66%, 49%);
   border-radius: 3.125rem;
   text-align: center;
@@ -121,7 +121,8 @@ header #menu {
 
 @media screen and (width <= 1024px) {
   header {
-    padding: 2.5rem;
+    padding: 0 40px;
+    height: 12vh;
     justify-content: space-between;
   }
   header nav {
@@ -203,7 +204,7 @@ main article h1 {
   margin-top: 3.75rem;
   font-size: 4rem;
   font-weight: 800;
-  letter-spacing: -0.3125rem;
+  letter-spacing: 1.2;
   line-height: 1.2;
 }
 main article p {
@@ -218,12 +219,10 @@ main article p {
 main article button {
   font-weight: 700;
   color: #fff;
-  padding: 0.9375rem 1.5625rem;
+  padding: 12px 30px;
   background: hsl(180, 66%, 49%);
   border-radius: 3.125rem;
   text-align: center;
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
 }
 main article button:hover {
   transition: all 300ms ease-in-out;
@@ -247,11 +246,17 @@ main img {
     width: 100%;
   }
   main article h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
+  }
+  main article p {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
   }
   main img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 70vh;
   }
 }
 .search {
@@ -297,7 +302,7 @@ main img {
 .search button {
   font-weight: 700;
   color: #fff;
-  padding: 0.9375rem 1.5625rem;
+  padding: 12px 30px;
   background: hsl(180, 66%, 49%);
   border-radius: 3.125rem;
   text-align: center;
@@ -315,6 +320,7 @@ main img {
   .search {
     display: flex;
     flex-direction: column;
+    margin: 0 2.5rem;
   }
   .search input {
     margin-right: 0;
@@ -372,20 +378,20 @@ main img {
   max-width: 100%;
   margin-top: 5rem;
 }
-.details .details-container div {
+.details .details-container .details-child {
   background: #fff;
   border-radius: 0.3125rem;
   padding: 3.125rem 1.875rem;
   line-height: 1.5;
   position: relative;
 }
-.details .details-container div h3 {
+.details .details-container .details-child h3 {
   line-height: 3;
 }
-.details .details-container div:nth-child(3) {
+.details .details-container .details-child:nth-child(3) {
   top: 3.125rem;
 }
-.details .details-container div:nth-child(4) {
+.details .details-container .details-child:nth-child(4) {
   top: 6.25rem;
 }
 .details .details-container .img-container {
@@ -437,7 +443,7 @@ main img {
 .details button {
   font-weight: 700;
   color: #fff;
-  padding: 0.9375rem 1.5625rem;
+  padding: 12px 30px;
   background: hsl(180, 66%, 49%);
   border-radius: 3.125rem;
   text-align: center;
@@ -452,7 +458,12 @@ main img {
 }
 
 @media screen and (width <= 1024px) {
+  .details {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
   .details .details-container {
+    text-align: center;
     grid-template-columns: unset;
     grid-template-rows: repeat(3, minmax(15.625rem, 1fr));
   }
@@ -466,6 +477,9 @@ main img {
   .details .text p {
     width: 60%;
   }
+  .details .details-child h3 {
+    text-align: center;
+  }
   .details .img-container {
     left: 50%;
     transform: translateX(-50%);
@@ -474,6 +488,7 @@ main img {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
+    width: 100%;
   }
   .details .links li span {
     margin-top: 0.3125rem;
@@ -508,12 +523,10 @@ main img {
 .boost button {
   font-weight: 700;
   color: #fff;
-  padding: 0.9375rem 1.5625rem;
+  padding: 12px 30px;
   background: hsl(180, 66%, 49%);
   border-radius: 3.125rem;
   text-align: center;
-  padding-left: 1.875rem;
-  padding-right: 1.875rem;
 }
 .boost button:hover {
   transition: all 300ms ease-in-out;
@@ -527,6 +540,9 @@ main img {
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
+  }
+  .boost h2 {
+    font-size: 2rem;
   }
 }
 footer {

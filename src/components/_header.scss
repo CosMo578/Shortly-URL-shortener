@@ -22,7 +22,7 @@ header {
                 margin-right: 1.25rem;
 
                 &:first-child {
-                    margin-left: 1.25rem;
+                    margin-left: 1.5625rem;
                 }
 
                 &:hover {
@@ -61,8 +61,10 @@ header {
 
 @media screen and (width <=1024px) {
     header {
-        padding: 2.5rem;
+        padding: 0 40px;
+        height: 12vh;
         justify-content: space-between;
+
         nav {
             display: none;
             height: 50vh;

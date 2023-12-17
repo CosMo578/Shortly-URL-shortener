@@ -22,8 +22,6 @@
 
     button {
         @include btn;
-        padding-left: 1.875rem;
-        padding-right: 1.875rem;
     }
 }
 
@@ -31,7 +29,12 @@
     .boost {
         background-image: url(/images/bg-boost-mobile.svg);
         background-size: cover;
-            background-position: center center;
-            background-repeat: no-repeat;
+        background-position: center center;
+        background-repeat: no-repeat;
+
+        h2 {
+            font-size: calc(2 * 1rem);
+
+        }
     }
 }
