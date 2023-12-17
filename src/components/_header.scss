@@ -10,7 +10,7 @@ header {
     padding: 3.125rem 5rem;
     font-weight: 700;
     color: $gray;
-    overflow-x: hidden;
+    overflow: hidden;
 
     nav {
         @include flex-between;

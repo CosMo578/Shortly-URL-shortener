@@ -72,7 +72,7 @@ header {
   padding: 3.125rem 5rem;
   font-weight: 700;
   color: hsl(257, 7%, 63%);
-  overflow-x: hidden;
+  overflow: hidden;
 }
 header nav {
   display: flex;
