@@ -1,22 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import '../global' silent;
-@import '../variables' silent;
-@import '../mixins' silent;
-@import '../global' silent;
-@import '../mixins' silent;
-@import '../variables' silent;
-@import '../global' silent;
-@import '../mixins' silent;
-@import '../variables' silent;
-@import '../global' silent;
-@import '../mixins' silent;
-@import '../variables' silent;
-@import '../global' silent;
-@import '../mixins' silent;
-@import './src/variables' silent;
-@import '../global' silent;
-@import '../mixins' silent;
-@import '../variables' silent;
 * {
   padding: 0;
   margin: 0;
@@ -89,7 +71,7 @@ header nav ul li:first-child {
 }
 header nav ul li:hover {
   transition: all 300ms ease-in-out;
-  color: #000;
+  color: hsl(180, 66%, 49%);
 }
 header nav .buttons button:first-child {
   font-weight: 700;
@@ -99,7 +81,7 @@ header nav .buttons button:first-child {
   text-align: center;
 }
 header nav .buttons button:first-child:hover {
-  color: #000;
+  color: hsl(180, 66%, 49%);
   cursor: pointer;
 }
 header nav .buttons button:nth-child(2) {
@@ -109,20 +91,25 @@ header nav .buttons button:nth-child(2) {
   background: hsl(180, 66%, 49%);
   border-radius: 3.125rem;
   text-align: center;
+  border: 2px solid transparent;
 }
 header nav .buttons button:nth-child(2):hover {
-  transition: all 300ms ease-in-out;
   cursor: pointer;
-  background: hsl(180, 66%, 79%);
+  color: hsl(180, 66%, 49%);
+  border: 2px solid hsl(180, 66%, 49%);
+  background: transparent;
+  transition: background 200ms ease;
 }
 header #menu {
   display: none;
+  opacity: 0;
 }
 
 @media screen and (width <= 1024px) {
   header {
     padding: 0 40px;
     height: 12vh;
+    margin-top: 30px;
     justify-content: space-between;
   }
   header nav {
@@ -158,6 +145,9 @@ header #menu {
   header nav ul li:first-child {
     margin: unset;
   }
+  header nav ul li:hover {
+    transition: all 200ms ease-in-out;
+  }
   header nav .buttons {
     display: flex;
     align-items: center;
@@ -172,13 +162,19 @@ header #menu {
   header nav .buttons button:first-child {
     margin: unset;
   }
+  header nav .buttons button:first-child:hover {
+    color: white;
+    transition: all 200ms ease-in-out;
+  }
   header nav .buttons button:nth-child(2) {
     min-width: 100%;
   }
   header #menu {
     display: block;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #000;
+    transition: all 2s ease-out, transform 2s;
+    opacity: 1;
   }
   header #menu:hover {
     cursor: pointer;
@@ -202,7 +198,7 @@ main article {
 }
 main article h1 {
   margin-top: 3.75rem;
-  font-size: 4rem;
+  font-size: 59.2px;
   font-weight: 800;
   letter-spacing: 1.2;
   line-height: 1.2;
@@ -223,11 +219,14 @@ main article button {
   background: hsl(180, 66%, 49%);
   border-radius: 3.125rem;
   text-align: center;
+  border: 2px solid transparent;
 }
 main article button:hover {
-  transition: all 300ms ease-in-out;
   cursor: pointer;
-  background: hsl(180, 66%, 79%);
+  color: hsl(180, 66%, 49%);
+  border: 2px solid hsl(180, 66%, 49%);
+  background: transparent;
+  transition: background 200ms ease;
 }
 main img {
   position: relative;
@@ -236,6 +235,11 @@ main img {
   width: auto;
 }
 
+@media screen and (width <= 768px) {
+  main article h1 {
+    font-size: 2.5rem;
+  }
+}
 @media screen and (width <= 1024px) {
   main {
     flex-direction: column-reverse;
@@ -246,7 +250,7 @@ main img {
     width: 100%;
   }
   main article h1 {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
   main article p {
     width: 70%;
@@ -255,8 +259,9 @@ main img {
     line-height: 1.8;
   }
   main img {
-    width: auto;
-    height: 70vh;
+    max-width: 100%;
+    height: auto;
+    left: 4%;
   }
 }
 .search {
@@ -306,14 +311,17 @@ main img {
   background: hsl(180, 66%, 49%);
   border-radius: 3.125rem;
   text-align: center;
+  border: 2px solid transparent;
   border-radius: 0.625rem;
   padding: 1.125rem 0;
   width: 15%;
 }
 .search button:hover {
-  transition: all 300ms ease-in-out;
   cursor: pointer;
-  background: hsl(180, 66%, 79%);
+  color: hsl(180, 66%, 49%);
+  border: 2px solid hsl(180, 66%, 49%);
+  background: transparent;
+  transition: background 200ms ease;
 }
 
 @media screen and (width <= 768px) {
@@ -343,6 +351,23 @@ main img {
 .details p {
   color: hsl(257, 7%, 63%);
   font-weight: 600;
+}
+.details .clear {
+  margin-top: 3rem;
+  margin: initial auto;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: unset;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: 2px solid transparent;
+}
+.details .clear:hover {
+  color: hsl(180, 66%, 49%);
+  border: 2px solid hsl(180, 66%, 49%);
+  background: transparent;
+  transition: background 200ms ease;
 }
 .details .text {
   text-align: center;
@@ -424,22 +449,6 @@ main img {
 .details .links li #short-url {
   color: hsl(180, 66%, 49%);
 }
-.details .links li #not-copied {
-  background: hsl(180, 66%, 49%);
-}
-.details .links li #not-copied:hover {
-  transition: all 300ms ease-in-out;
-  cursor: pointer;
-  background: hsl(180, 66%, 79%);
-}
-.details .links li #copied {
-  background: hsl(257, 27%, 26%);
-}
-.details .links li #copied:hover {
-  transition: all 300ms ease-in-out;
-  cursor: pointer;
-  background: hsl(257, 27%, 60%);
-}
 .details button {
   font-weight: 700;
   color: #fff;
@@ -447,14 +456,33 @@ main img {
   background: hsl(180, 66%, 49%);
   border-radius: 3.125rem;
   text-align: center;
+  border: 2px solid transparent;
   width: 4.375rem;
   margin-left: 1.25rem;
   border-radius: 0.25rem;
 }
 .details button:hover {
+  cursor: pointer;
+  color: hsl(180, 66%, 49%);
+  border: 2px solid hsl(180, 66%, 49%);
+  background: transparent;
+  transition: background 200ms ease;
+}
+.details .copy {
+  background: hsl(180, 66%, 49%);
+}
+.details .copy:hover {
   transition: all 300ms ease-in-out;
   cursor: pointer;
-  background: hsl(180, 66%, 79%);
+  background: transparent;
+}
+.details .copied {
+  background: hsl(257, 27%, 26%);
+}
+.details .copied:hover {
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  background: transparent;
 }
 
 @media screen and (width <= 1024px) {
@@ -527,11 +555,14 @@ main img {
   background: hsl(180, 66%, 49%);
   border-radius: 3.125rem;
   text-align: center;
+  border: 2px solid transparent;
 }
 .boost button:hover {
-  transition: all 300ms ease-in-out;
   cursor: pointer;
-  background: hsl(180, 66%, 79%);
+  color: hsl(180, 66%, 49%);
+  border: 2px solid hsl(180, 66%, 49%);
+  background: transparent;
+  transition: background 200ms ease;
 }
 
 @media screen and (width <= 768px) {

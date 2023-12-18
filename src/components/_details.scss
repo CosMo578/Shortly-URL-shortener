@@ -1,7 +1,3 @@
-@import '../global' silent;
-@import '../mixins' silent;
-@import '../variables' silent;
-
 .details {
     background-color: hsl(0, 1%, 90%);
     max-width: 100%;
@@ -13,6 +9,24 @@
     p {
         color: $gray;
         font-weight: 600;
+    }
+
+    .clear {
+        margin-top: 3rem;
+        margin: initial auto;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        text-align: unset;
+        width: fit-content;
+        border: 2px solid transparent;
+
+        &:hover {
+            color: $primary;
+            border: 2px solid $primary;
+            background: transparent;
+            transition: background 200ms ease;
+        }
     }
 
     .text {
@@ -109,26 +123,6 @@
         #short-url {
             color: $primary;
         }
-
-        #not-copied {
-            background: $primary;
-
-            &:hover {
-                transition: all 300ms ease-in-out;
-                cursor: pointer;
-                background: hsl(180, 66%, 79%);
-            }
-        }
-
-        #copied {
-            background: $secondary;
-
-            &:hover {
-                transition: all 300ms ease-in-out;
-                cursor: pointer;
-                background: hsl(257, 27%, 60%);
-            }
-        }
     }
 
     button {
@@ -136,7 +130,26 @@
         width: 4.375rem;
         margin-left: 1.25rem;
         border-radius: 0.25rem;
+    }
 
+    .copy {
+        background: $primary;
+
+        &:hover {
+            transition: all 300ms ease-in-out;
+            cursor: pointer;
+            background: transparent;
+        }
+    }
+
+    .copied {
+        background: $secondary;
+
+        &:hover {
+            transition: all 300ms ease-in-out;
+            cursor: pointer;
+            background: transparent;
+        }
     }
 }
 

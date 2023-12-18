@@ -13,6 +13,8 @@
 
     <link rel="stylesheet" href="/styles/style.css" />
     <script defer src="/src/app.js"></script>
+    <script async src="./node_modules/clipboard/dist/clipboard.min.js"></script>
+
     <script
       defer
       type="module"
@@ -28,7 +30,7 @@
     <style>
       .attribution {
         padding: 2.5vh;
-        font-size: 1rem;
+        font-size: 90%;
         text-align: center;
       }
 
@@ -57,7 +59,7 @@
           <button>Sign Up</button>
         </div>
       </nav>
-      <ion-icon name="menu" id="menu"></ion-icon>
+      <ion-icon name="menu-outline" id="menu"></ion-icon>
     </header>
 
     <!---------------------------------
@@ -88,7 +90,7 @@
     |                                 |
     ---------------------------------->
     <form
-      onsubmit="callApi(e)"
+      onsubmit="callApi(event)"
       class="search"
       style="background-image: url(/images/bg-shorten-desktop.svg)">
       <input type="url" placeholder="Shorten a link here..." id="input" />
@@ -97,17 +99,8 @@
 
     <section class="details">
       <ul class="links">
-        <li>
-          https://frontendmentor.io/pages<span id="short-url"
-            >https://p2zw3y.com <button id="not-copied">Copy</button></span
-          >
-        </li>
-        <li>
-          https://google.com<span id="short-url"
-            >https://this23hh4.com <button id="copied">Copied!</button></span
-          >
-        </li>
       </ul>
+      <button class="clear">Clear Links</button>
       <div class="text">
         <h2>Advanced Statistics</h2>
         <p>
