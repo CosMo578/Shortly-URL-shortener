@@ -4,13 +4,38 @@ let clearButton = document.querySelector('.clear');
 let parentElement = document.querySelector('.links');
 let hasFunction1Run = false;
 
-document.addEventListener('DOMContentLoaded', () => {
-  if (storedLinks.length == 0) {
-    clearButton.style.display = 'none';
+const updateData = () => {
+  document.addEventListener('DOMContentLoaded', () => {
+    let fetchedLinks = getLocalData();
+    renderData(fetchedLinks);
+
+    if (fetchedLinks.length === 0) {
+      clearButton.style.display = 'none';
+    } else {
+      clearButton.style.display = 'block';
+    }
+  });
+};
+
+function getLocalData() {
+  const storedData = localStorage.getItem('Links');
+  return JSON.parse(storedData);
+}
+
+function renderData(links) {
+  if (links === null) {
+    return;
   } else {
-    clearButton.style.display = 'block';
+    links.forEach((link) => {
+      const newLink = document.createElement('li');
+      newLink.innerHTML = `${link}`;
+
+      const linksParent = document.querySelector('.links');
+      linksParent.appendChild(newLink);
+    });
   }
-});
+}
+updateData();
 
 function validateUrl(url) {
   const regex =
@@ -62,7 +87,7 @@ async function callApi(e) {
   const linksParent = document.querySelector('.links');
 
   if (!validateUrl(inputFieldValue)) {
-    console.error('Invalid URL. Please enter a valid web address.');
+    alert('Invalid URL. Please enter a valid web address.');
     return;
   }
 
@@ -81,12 +106,12 @@ async function callApi(e) {
 
   try {
     const response = await fetch(url, options);
-    const result = await response.json();
-
     if (response.status !== 200) {
       alert(`Error: ${data.message}`);
       return;
     }
+
+    const result = await response.json();
 
     let dataText = `${inputFieldValue}<span id="short-url">${result.result_url}<button data-clipboard-text=${result.result_url} class="copyBtn copy">Copy</button></span>`;
 
@@ -99,48 +124,29 @@ async function callApi(e) {
 
     storedLinks.push(dataText);
     localStorage.setItem('Links', JSON.stringify(storedLinks));
-    clearButton.style.display = 'block';
-
     inputField.value = '';
   } catch (error) {
     alert(error.message);
   }
   hasFunction1Run = true;
+
+  clearButton.style.display = 'block';
 }
 
-function getLocalData() {
-  const storedData = localStorage.getItem('Links');
-  return JSON.parse(storedData);
-}
+// document.addEventListener('DOMContentLoaded', () => {
+//
+// });
 
-function renderData(links) {
-  links.forEach((link) => {
-    const newLink = document.createElement('li');
-    newLink.innerHTML = `${link}`;
-
-    const linksParent = document.querySelector('.links');
-    linksParent.appendChild(newLink);
-  });
-}
-
-const updateData = () => {
-  document.addEventListener('DOMContentLoaded', () => {
-    let fetchedLinks = getLocalData();
-    renderData(fetchedLinks);
-  });
-};
-updateData();
-
-if (hasFunction1Run) {
-  let copyVal = document.querySelector('button.copyBtn.copy');
-  function copyText() {
-    if (copyVal.className.includes('copy')) {
-      copyVal.classList.add('copied');
-      copyVal.innerHTML = 'Copied';
-      copyVal.classList.remove('copy');
-    }
-  }
-  if (copyVal) {
-    copyVal.addEventListener('click', copyText);
-  }
-}
+// if (hasFunction1Run) {
+//   let copyVal = document.querySelector('button.copyBtn');
+//   function copyText() {
+//     if (copyVal.className.includes('copy')) {
+//       copyVal.classList.remove('copy');
+//       copyVal.classList.add('copied');
+//       copyVal.innerHTML = 'Copied';
+//     }
+//   }
+//   if (copyVal) {
+//     copyVal.addEventListener('click', copyText);
+//   }
+// }
