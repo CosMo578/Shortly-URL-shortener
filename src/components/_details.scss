@@ -101,6 +101,7 @@
         padding: 1.25rem;
         border-radius: 0.5rem;
         font-weight: 600;
+        overflow-x: hidden;
 
         #short-url {
             color: $primary;
@@ -197,9 +198,14 @@
             flex-direction: column;
             align-items: flex-start;
             justify-content: space-evenly;
-            width: 100%;
-
+            max-width: 100%;
+            box-sizing: border-box;
+            padding: 1.25rem;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            
             span {
+            box-sizing: border-box;
                 margin-top: 0.3125rem;
                 width: 100%;
                 max-width: 100%;

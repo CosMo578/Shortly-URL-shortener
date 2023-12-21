@@ -3,7 +3,6 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  border: 1px solid red;
 }
 
 html {
@@ -319,8 +318,9 @@ main img {
   border: 2px solid transparent;
   box-sizing: border-box;
   border-radius: 0.625rem;
-  padding: 1.125rem 0;
-  width: 15%;
+  padding: 1.25rem 1.5625rem;
+  width: -moz-max-content;
+  width: max-content;
 }
 .search button:hover {
   cursor: pointer;
@@ -330,7 +330,7 @@ main img {
   transition: background 200ms ease;
 }
 
-@media screen and (width <= 768px) {
+@media screen and (width <= 1024px) {
   .search {
     display: flex;
     flex-direction: column;
@@ -434,6 +434,7 @@ main img {
   padding: 1.25rem;
   border-radius: 0.5rem;
   font-weight: 600;
+  overflow-x: hidden;
 }
 .details .links li #short-url {
   color: hsl(180, 66%, 49%);
@@ -527,9 +528,14 @@ main img {
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
-    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 1.25rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .details .links li span {
+    box-sizing: border-box;
     margin-top: 0.3125rem;
     width: 100%;
     max-width: 100%;
@@ -621,7 +627,7 @@ footer ul li:hover {
   cursor: pointer;
 }
 
-@media screen and (width <= 768px) {
+@media screen and (width <= 1024px) {
   footer {
     flex-direction: column;
     align-items: center;

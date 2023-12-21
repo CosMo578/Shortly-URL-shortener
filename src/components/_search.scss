@@ -38,12 +38,12 @@
     button {
         @include btn;
         border-radius: 0.625rem;
-        padding: 1.125rem 0;
-        width: 15%;
+        padding: 1.25rem 1.5625rem;
+        width: max-content;
     }
 }
 
-@media screen and (width <=768px) {
+@media screen and (width <=1024px) {
     .search {
         display: flex;
         flex-direction: column;
