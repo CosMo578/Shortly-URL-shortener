@@ -3,6 +3,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  border: 1px solid red;
 }
 
 html {
@@ -92,6 +93,7 @@ header nav .buttons button:nth-child(2) {
   border-radius: 3.125rem;
   text-align: center;
   border: 2px solid transparent;
+  box-sizing: border-box;
 }
 header nav .buttons button:nth-child(2):hover {
   cursor: pointer;
@@ -136,6 +138,7 @@ header #menu {
     color: #fff;
     flex-direction: column;
     height: 50%;
+    padding: 1rem;
   }
   header nav ul li {
     text-align: center;
@@ -167,7 +170,8 @@ header #menu {
     transition: all 200ms ease-in-out;
   }
   header nav .buttons button:nth-child(2) {
-    min-width: 100%;
+    width: 100%;
+    padding: 12px 0;
   }
   header #menu {
     display: block;
@@ -220,6 +224,7 @@ main article button {
   border-radius: 3.125rem;
   text-align: center;
   border: 2px solid transparent;
+  box-sizing: border-box;
 }
 main article button:hover {
   cursor: pointer;
@@ -312,6 +317,7 @@ main img {
   border-radius: 3.125rem;
   text-align: center;
   border: 2px solid transparent;
+  box-sizing: border-box;
   border-radius: 0.625rem;
   padding: 1.125rem 0;
   width: 15%;
@@ -351,23 +357,6 @@ main img {
 .details p {
   color: hsl(257, 7%, 63%);
   font-weight: 600;
-}
-.details .clear {
-  margin-top: 3rem;
-  margin: initial auto;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: unset;
-  width: -moz-fit-content;
-  width: fit-content;
-  border: 2px solid transparent;
-}
-.details .clear:hover {
-  color: hsl(180, 66%, 49%);
-  border: 2px solid hsl(180, 66%, 49%);
-  background: transparent;
-  transition: background 200ms ease;
 }
 .details .text {
   text-align: center;
@@ -457,8 +446,7 @@ main img {
   border-radius: 3.125rem;
   text-align: center;
   border: 2px solid transparent;
-  width: 4.375rem;
-  margin-left: 1.25rem;
+  box-sizing: border-box;
   border-radius: 0.25rem;
 }
 .details button:hover {
@@ -468,21 +456,44 @@ main img {
   background: transparent;
   transition: background 200ms ease;
 }
+.details .copyBtn {
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-left: 1.25rem;
+}
+.details .clear {
+  display: none;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 3rem;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.details .clear:hover {
+  color: hsl(180, 66%, 49%);
+  border: 2px solid hsl(180, 66%, 49%);
+  background: transparent;
+  transition: background 200ms ease;
+}
 .details .copy {
   background: hsl(180, 66%, 49%);
 }
 .details .copy:hover {
-  transition: all 300ms ease-in-out;
-  cursor: pointer;
   background: transparent;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
 }
 .details .copied {
   background: hsl(257, 27%, 26%);
+  border: 2px solid hsl(257, 27%, 26%);
 }
 .details .copied:hover {
-  transition: all 300ms ease-in-out;
-  cursor: pointer;
+  color: hsl(257, 27%, 26%);
   background: transparent;
+  cursor: pointer;
+  border: 2px solid hsl(257, 27%, 26%);
+  transition: all 300ms ease-in-out;
 }
 
 @media screen and (width <= 1024px) {
@@ -523,12 +534,13 @@ main img {
     width: 100%;
     max-width: 100%;
   }
-  .details .links li button {
+  .details .links li .copyBtn {
     display: block;
-    margin-left: 0;
-    margin-top: 0.3125rem;
-    width: 100%;
     padding: 0.9375rem 0;
+    margin: 0;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 100%;
   }
 }
 .boost {
@@ -556,6 +568,7 @@ main img {
   border-radius: 3.125rem;
   text-align: center;
   border: 2px solid transparent;
+  box-sizing: border-box;
 }
 .boost button:hover {
   cursor: pointer;
