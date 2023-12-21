@@ -3,7 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
+    <title>Shortly URL Shortener</title>
+    <meta property="og:title" content="Shortly URL Shortener" />
+    <meta property="og:type" content="Project website" />
+    <meta
+      property="og:description"
+      content="A landing page for shortening long url" />
 
     <link
       rel="icon"
@@ -11,10 +16,14 @@
       sizes="32x32"
       href="./images/favicon-32x32.png" />
 
+    <!-- CSS and JavaScript -->
     <link rel="stylesheet" href="/styles/style.css" />
-    <script async src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
     <script defer src="/src/app.js"></script>
+    <!-- CSS and JavaScript -->
 
+    <script
+      async
+      src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js"></script>
     <script
       defer
       type="module"
@@ -24,9 +33,6 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
-    <title>Shortly URL shortening</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       .attribution {
         padding: 2.5vh;
@@ -98,8 +104,7 @@
     </form>
 
     <section class="details">
-      <ul class="links">
-      </ul>
+      <ul class="links"></ul>
       <button class="clear">Clear Links</button>
       <div class="text">
         <h2>Advanced Statistics</h2>

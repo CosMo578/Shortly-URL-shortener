@@ -104,7 +104,7 @@ function showClearBtn() {
           console.info('Text:', e.text);
           console.info('Trigger:', e.trigger);
         });
-      })
+      });
     }
 
     initializeClipboard();
@@ -150,17 +150,3 @@ document.addEventListener('DOMContentLoaded', () => {
   updateData();
   console.log(eleArr);
 });
-
-// // if (hasFunction1Run) {
-// //   let copyVal = document.querySelector('button.copyBtn');
-// //   function copyText() {
-// //     if (copyVal.className.includes('copy')) {
-// //       copyVal.classList.remove('copy');
-// //       copyVal.classList.add('copied');
-// //       copyVal.innerHTML = 'Copied';
-// //     }
-// //   }
-// //   if (copyVal) {
-// //     copyVal.addEventListener('click', copyText);
-// //   }
-// // }

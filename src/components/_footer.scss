@@ -12,7 +12,8 @@ footer {
             margin-right: 0.625rem;
             display: inline-block;
 
-            &:hover, .ico:hover {
+            &:hover,
+            .ico:hover {
                 fill: $primary;
                 cursor: pointer;
             }
@@ -22,7 +23,6 @@ footer {
     ul {
         h4 {
             line-height: 2.8;
-
         }
 
         li {

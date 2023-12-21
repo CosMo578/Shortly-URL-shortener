@@ -6,19 +6,9 @@
 }
 
 html {
-  font-size: 18px;
+  font-size: clamp(14px, minmax(2vw, 3.5vw), 18px);
 }
 
-@media screen and (width <= 768px) {
-  :root {
-    font-size: 16px;
-  }
-}
-@media screen and (width <= 576px) {
-  :root {
-    font-size: 14px;
-  }
-}
 body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
@@ -610,7 +600,8 @@ footer ul:nth-child(5) .svg {
   margin-right: 0.625rem;
   display: inline-block;
 }
-footer ul:nth-child(5) .svg:hover, footer ul:nth-child(5) .svg .ico:hover {
+footer ul:nth-child(5) .svg:hover,
+footer ul:nth-child(5) .svg .ico:hover {
   fill: hsl(180, 66%, 49%);
   cursor: pointer;
 }
